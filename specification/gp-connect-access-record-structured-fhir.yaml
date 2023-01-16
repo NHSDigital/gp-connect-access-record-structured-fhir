@@ -233,10 +233,8 @@ info:
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
 servers:
-  - url: 'https://sandbox.api.service.nhs.uk/gp-connect-access-record-structured-fhir'
-    description: Sandbox environment.
-  - url: 'https://int.api.service.nhs.uk/gp-connect-access-record-structured-fhir'
-    description: Integration test environment.
-  - url: 'https://api.service.nhs.uk/gp-connect-access-record-structured-fhir'
-    description: Production environment.
+  - url: 'https://orange.testlab.nhs.uk/'
+    description: Internet-facing demonstrator.
+  - url: 'https://orange.testlab.nhs.uk/opentest.html'
+    description: OpenTest environment.
 paths: {}
