@@ -237,4 +237,84 @@ servers:
     description: Internet-facing demonstrator.
   - url: 'https://orange.testlab.nhs.uk/opentest.html'
     description: OpenTest environment.
-paths: {}
+paths: 
+  /Patient/$gpc.getstructuredrecord:
+    post:
+      summary: Access a structured record relating to a patient.
+      description: >
+        ## Overview 
+        
+        This end point returns a patient's record in structured format using FHIR Operations. It returns a Bundle.
+        
+        The request body must be a Parameters resource.
+      requestBody:
+        required: true
+        description: Valid request for the entire record.
+        content: 
+          application/fhir+json:
+            schema:
+              type: object
+              description: >
+                 TODO: Add in description with link to Simplifier
+            example:
+              resourceType: Parameters
+              parameter:
+                - name: patientNHSNumber
+                  valueIdentifier:
+                    system: https://fhir.nhs.uk/Id/nhs-number
+                    value: '9000000009'
+                - name: includeAllergies
+                  part:
+                    - name: includeResolvedAllergies
+                      valueBoolean: true
+                - name: includeMedication
+                  part:
+                    - name:  includePrescriptionIssues
+                      valueBoolean: true
+                    - name: medicationSearchFromDate
+                      value: '2019-12-21'
+                - name: includeConsultations
+                  part:
+                    - name: consultationSearchPeriod
+                      valuePeriod:
+                        start: '2019-12-21'
+                        end: '2020-02-21'
+                    - name: includeNumberOfMostRecent
+                      value: 5
+                - name: includeProblems
+                  part:
+                    - name: filterStatus
+                      valueCode: active
+                    - name: filterSignificance
+                      valueCode: major
+                - name: includeImmunisations
+                  part:
+                    - name: includeNotGiven
+                      valueBoolean: true
+                    - name: includeStatus
+                      valueBoolean: true
+                - name: includeUncategorisedData
+                  part: 
+                    - name: uncategorisedDataSearchPeriod
+                      valuePeriod:
+                        start: '2019-12-21'
+                        end: '2020-02-21'
+                - name: includeInvestigations
+                  part:
+                    - name: investigationSearchPeriod
+                      valuePeriod:
+                        start: '2019-12-21'
+                        end: '2020-02-21'
+                - name: includeReferrals
+                  part:
+                    - name:  referralSearchPeriod
+                      valuePeriod:
+                        start: '2019-12-21'
+                        end: '2020-02-21'
+                - name: includeDiaryEntries
+                  part:
+                    - name: diaryEntriesSearchDate
+                      value: '2019-12-21'
+      responses:
+        '200':
+          description: Returned with the response body which will be a [GPConnect-StructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3) resource
