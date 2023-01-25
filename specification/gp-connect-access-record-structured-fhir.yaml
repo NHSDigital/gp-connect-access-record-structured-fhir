@@ -247,6 +247,11 @@ paths:
         This end point returns a patient's record in structured format using FHIR Operations. It returns a Bundle.
         
         The request body must be a Parameters resource.
+      parameters:
+        - $ref: "#/components/parameters/ProviderASID"
+        - $ref: "#/components/parameters/ConsumerASID"
+        - $ref: "#/components/parameters/InteractionID"
+        - $ref: "#/components/parameters/TraceID"
       requestBody:
         required: true
         description: Valid request for the entire record.
@@ -318,3 +323,41 @@ paths:
       responses:
         '200':
           description: Returned with the response body which will be a [GPConnect-StructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3) resource
+components:
+  parameters:
+    TraceID:
+      in: header
+      name: Ssp-TraceID
+      description: |
+        	Consumer's Trace ID (a GUID or UUID), generated per request
+      required: true
+      schema:
+        type: string
+        example: '09a01679-2564-0fb4-5129-aecc81ea2706'
+    ConsumerASID:
+      in: header
+      name: Ssp-From
+      description: |
+        	Consumer's ASID - that of the requesting organisation
+      required: true
+      schema:
+        type: string
+        example: '200000000359'
+    ProviderASID:
+      in: header
+      name: Ssp-To
+      description: |
+        	Provider's ASID - identified by use of SDS
+      required: true
+      schema:
+        type: string
+        example: '918999198738'
+    InteractionID:
+      in: header
+      name: Ssp-InteractionID
+      description: |
+        	Spine Interaction ID, likely to be 	urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+      required: true
+      schema:
+        type: string
+        example: 'urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
