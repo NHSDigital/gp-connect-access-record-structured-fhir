@@ -145,11 +145,11 @@ info:
 
 
     ## Environments and testing
-    | Environment	                 | URL
-    | -----------                  | ---
-    | Internet-facing demonstrator | 	[https://orange.testlab.nhs.uk/](https://orange.testlab.nhs.uk/)
-    | OpenTest environment	       | [https://orange.testlab.nhs.uk/opentest.html](https://orange.testlab.nhs.uk/opentest.html)
-    | Integration                  |  (INT)	Provided during onboarding process
+    | Environment	                 | URL |
+    | -----------                  | --- |
+    | Internet-facing demonstrator | 	[https://orange.testlab.nhs.uk/](https://orange.testlab.nhs.uk/) |
+    | OpenTest environment	       | [https://orange.testlab.nhs.uk/opentest.html](https://orange.testlab.nhs.uk/opentest.html) |
+    | Integration                  |  (INT)	Provided during onboarding process |
     We have 2 testing streams:
 
     - clinical testing
