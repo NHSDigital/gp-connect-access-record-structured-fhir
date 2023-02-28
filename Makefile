@@ -31,7 +31,7 @@ publish: clean
 	npm run publish 2> /dev/null
 
 #Files to loop over in release
-_dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/. tests"
+_dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/."
 
 #Create /dist/ sub-directory and copy files into directory
 release: clean publish
