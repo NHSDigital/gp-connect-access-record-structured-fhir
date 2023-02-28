@@ -233,11 +233,6 @@ info:
     name: 'gp-connect-access-record-structured-fhir API Support'
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
-servers:
-  - url: 'https://orange.testlab.nhs.uk/'
-    description: Internet-facing demonstrator.
-  - url: 'https://orange.testlab.nhs.uk/opentest.html'
-    description: OpenTest environment.
 paths: 
   /Patient/$gpc.getstructuredrecord:
     post:
