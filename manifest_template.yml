@@ -37,27 +37,9 @@ meta:
 apigee:
   environments:
 {% for ENV in APIGEE_ENVIRONMENTS %}
-{% set TITLE = PRODUCT_DISPLAY_NAME + ' (' + ENV.display_name + ' Environment)' %}
 {% set NAME = SERVICE_NAME + '-' + ENV.name %}
   - name: {{ ENV.name }}
-    products:
-      - name: {{ NAME }}
-        approvalType: auto
-        description: {{ DESCRIPTION }}
-        displayName: {{ TITLE }}
-        environments: [ {{ ENV.name }} ]
-        scopes:
-          - 'urn:nhsd:apim:app:level3:{{ SERVICE_NAME }}'
-          - 'urn:nhsd:apim:user-nhs-cis2:aal3:{{ SERVICE_NAME }}'
     specs:
       - name: {{ NAME }}
         path: {{ SERVICE_NAME }}.json
-    api_catalog:
-      - edgeAPIProductName: {{ NAME }}
-        anonAllowed: true
-        description: {{ DESCRIPTION }}
-        requireCallbackUrl: false
-        title: {{ TITLE }}
-        visibility: {{ ENV.portal_visibility | default(true) }}
-        specId: {{ NAME }}
 {% endfor %}
