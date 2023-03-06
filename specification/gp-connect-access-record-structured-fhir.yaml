@@ -10,7 +10,7 @@ info:
 
     The API accesses GP principal supplier systems, provides a consistent interface and data model, and is brokered through [Spine](https://digital.nhs.uk/services/spine). 
 
-    ![GP Connect Ecosystem Overview](https://raw.githubusercontent.com/NHSDigital/gp-connect-access-record-structuredimagesimages/gpconnect-ecosystem.svg)
+    ![GP Connect Ecosystem Overview](https://raw.githubusercontent.com/NHSDigital/gp-connect-access-record-structured-fhir/master/specification/images/gpconnect-ecosystem.svg)
 
     You can retrieve data from GP practice records for the following areas:
 
