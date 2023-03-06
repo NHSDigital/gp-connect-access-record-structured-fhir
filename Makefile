@@ -31,43 +31,12 @@ publish: clean
 	npm run publish 2> /dev/null
 
 #Files to loop over in release
-_dist_include="pytest.ini poetry.lock poetry.toml pyproject.toml Makefile build/."
+_dist_include="poetry.lock poetry.toml pyproject.toml Makefile build/."
 
 #Create /dist/ sub-directory and copy files into directory
 release: clean publish
 	mkdir -p dist
 	for f in $(_dist_include); do cp -r $$f dist; done
 
-#################
-# Test commands #
-#################
-
-TEST_CMD := @APIGEE_ACCESS_TOKEN=$(APIGEE_ACCESS_TOKEN) \
-		poetry run pytest -v \
-		--color=yes \
-		--api-name=gp-connect-access-record-structured-fhir \
-		--proxy-name=$(PROXY_NAME) \
-		-s
-
-PROD_TEST_CMD := $(TEST_CMD) \
-		--apigee-app-id=$(APIGEE_APP_ID) \
-		--status-endpoint-api-key=$(STATUS_ENDPOINT_API_KEY)
-
-#Command to run end-to-end smoketests post-deployment to verify the environment is working
-smoketest:
-	$(TEST_CMD) \
-	--junitxml=smoketest-report.xml \
-	-m smoketest
-
 test:
-	$(TEST_CMD) \
-	--junitxml=test-report.xml \
-
-smoketest-prod:
-	$(PROD_TEST_CMD) \
-	--junitxml=smoketest-report.xml \
-	-m smoketest
-
-test-prod:
-	$(PROD_CMD) \
-	--junitxml=test-report.xml \
+	@echo no tests for spec-only API

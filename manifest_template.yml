@@ -1,22 +1,15 @@
-SERVICE_NAME: gp-connect-access-record-structured-fhir
-PRODUCT_DISPLAY_NAME: gp-connect-access-record-structured-fhir
-DESCRIPTION: example description
 APIGEE_ENVIRONMENTS:
   - name: internal-dev
     display_name: Internal Development
-    has_mock_auth: true
   - name: internal-qa
     display_name: Internal QA
-    has_mock_auth: true 
   - name: ref
     display_name: Reference
-    has_mock_auth: true
   - name: internal-dev-sandbox
     display_name: Internal Development Sandbox
     portal_visibility: false
   - name: internal-qa
     display_name: Internal QA
-    has_mock_auth: true
     portal_visibility: false
   - name: internal-qa-sandbox
     display_name: Internal QA Sandbox
@@ -37,9 +30,9 @@ meta:
 apigee:
   environments:
 {% for ENV in APIGEE_ENVIRONMENTS %}
-{% set NAME = SERVICE_NAME + '-' + ENV.name %}
+{% set NAME = 'gp-connect-access-record-structured-fhir-' + ENV.name %}
   - name: {{ ENV.name }}
     specs:
       - name: {{ NAME }}
-        path: {{ SERVICE_NAME }}.json
+        path: gp-connect-access-record-structured-fhir.json
 {% endfor %}
