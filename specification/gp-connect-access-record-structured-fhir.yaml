@@ -364,6 +364,9 @@ components:
     Authorization:
       in: header
       name: Authorization
+      required: true
+      description: |
+        	Bearer authorisation header containing JWT
       schema:
         type: string
         example:
