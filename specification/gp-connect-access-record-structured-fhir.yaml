@@ -251,6 +251,7 @@ paths:
         - $ref: "#/components/parameters/ConsumerASID"
         - $ref: "#/components/parameters/InteractionID"
         - $ref: "#/components/parameters/TraceID"
+        - $ref: "#/components/parameters/Authorization"
       requestBody:
         required: true
         description: Valid request for the entire record.
