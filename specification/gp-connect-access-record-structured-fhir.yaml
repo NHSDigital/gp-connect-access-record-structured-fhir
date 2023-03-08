@@ -233,6 +233,9 @@ info:
     name: 'gp-connect-access-record-structured-fhir API Support'
     url: 'https://digital.nhs.uk/developer/help-and-support'
     email: api.management@nhs.net
+servers:
+  - url: 'https://orange.testlab.nhs.uk/B82617/STU3/1/gpconnect/structured/fhir/'
+    description: Demonstrator
 paths: 
   /Patient/$gpc.getstructuredrecord:
     post:
