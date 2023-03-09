@@ -251,7 +251,6 @@ paths:
         - $ref: "#/components/parameters/ConsumerASID"
         - $ref: "#/components/parameters/InteractionID"
         - $ref: "#/components/parameters/TraceID"
-        - $ref: "#/components/parameters/Authorization"
       requestBody:
         required: true
         description: Valid request for the entire record.
@@ -361,13 +360,7 @@ components:
       schema:
         type: string
         example: 'urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1'
-    Authorization:
-      in: header
-      name: Authorization
-      required: true
-      description: |
-        	Bearer authorisation header containing JWT
-      schema:
-        type: string
-        example:
-          "Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.ewogICJpc3MiOiAiaHR0cHM6Ly9vcmFuZ2UudGVzdGxhYi5uaHMudWsvIiwKICAic3ViIjogIjEiLAogICJhdWQiOiAiaHR0cHM6Ly9vcmFuZ2UudGVzdGxhYi5uaHMudWsvQjgyNjE3L1NUVTMvMS9ncGNvbm5lY3QvZG9jdW1lbnRzL2ZoaXIiLAogICJleHAiOiAxNjc4MjgzNjI3LAogICJpYXQiOiAxNjc4MjgzMzI3LAogICJyZWFzb25fZm9yX3JlcXVlc3QiOiAiZGlyZWN0Y2FyZSIsCiAgInJlcXVlc3RlZF9zY29wZSI6ICJwYXRpZW50LyoucmVhZCIsCiAgInJlcXVlc3RpbmdfZGV2aWNlIjogewogICAgInJlc291cmNlVHlwZSI6ICJEZXZpY2UiLAogICAgImlkZW50aWZpZXIiOiBbCiAgICAgIHsKICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vb3JhbmdlLnRlc3RsYWIubmhzLnVrL2dwY29ubmVjdC1kZW1vbnN0cmF0b3IvSWQvbG9jYWwtc3lzdGVtLWluc3RhbmNlLWlkIiwKICAgICAgICAidmFsdWUiOiAiZ3BjZGVtb25zdHJhdG9yLTEtb3JhbmdlIgogICAgICB9CiAgICBdLAogICAgIm1vZGVsIjogIkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIiwKICAgICJ2ZXJzaW9uIjogIjEuNS4wIgogIH0sCiAgInJlcXVlc3Rpbmdfb3JnYW5pemF0aW9uIjogewogICAgInJlc291cmNlVHlwZSI6ICJPcmdhbml6YXRpb24iLAogICAgImlkZW50aWZpZXIiOiBbCiAgICAgIHsKICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vZmhpci5uaHMudWsvSWQvb2RzLW9yZ2FuaXphdGlvbi1jb2RlIiwKICAgICAgICAidmFsdWUiOiAiQTExMTExIgogICAgICB9CiAgICBdLAogICAgIm5hbWUiOiAiQ29uc3VtZXIgb3JnYW5pc2F0aW9uIG5hbWUiCiAgfSwKICAicmVxdWVzdGluZ19wcmFjdGl0aW9uZXIiOiB7CiAgICAicmVzb3VyY2VUeXBlIjogIlByYWN0aXRpb25lciIsCiAgICAiaWQiOiAiMSIsCiAgICAiaWRlbnRpZmllciI6IFsKICAgICAgewogICAgICAgICJzeXN0ZW0iOiAiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtdXNlci1pZCIsCiAgICAgICAgInZhbHVlIjogIjExMTExMTExMTExMSIKICAgICAgfSwKICAgICAgewogICAgICAgICJzeXN0ZW0iOiAiaHR0cHM6Ly9maGlyLm5ocy51ay9JZC9zZHMtcm9sZS1wcm9maWxlLWlkIiwKICAgICAgICAidmFsdWUiOiAiMjIyMjIyMjIyMjIyMjIiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAic3lzdGVtIjogImh0dHBzOi8vb3JhbmdlLnRlc3RsYWIubmhzLnVrL2dwY29ubmVjdC1kZW1vbnN0cmF0b3IvSWQvbG9jYWwtdXNlci1pZCIsCiAgICAgICAgInZhbHVlIjogIjEiCiAgICAgIH0KICAgIF0sCiAgICAibmFtZSI6IFsKICAgICAgewogICAgICAgICJmYW1pbHkiOiAiRGVtb25zdHJhdG9yIiwKICAgICAgICAiZ2l2ZW4iOiBbCiAgICAgICAgICAiR1BDb25uZWN0IgogICAgICAgIF0sCiAgICAgICAgInByZWZpeCI6IFsKICAgICAgICAgICJEciIKICAgICAgICBdCiAgICAgIH0KICAgIF0KICB9Cn0."
+  securitySchemes:
+    OAuth_Token:
+      type: http
+      scheme: bearer
