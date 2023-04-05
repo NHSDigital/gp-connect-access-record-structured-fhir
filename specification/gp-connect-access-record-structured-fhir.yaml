@@ -82,6 +82,12 @@ info:
 
     - you must have a clinical safety officer (CSO) who is responsible for [DCB0129](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) and, if necessary, [DCB0160](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems) (for more on clinical risk management, visit [Clinical risk management standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards))
     If you are confident that you can meet the prerequisites, please express an interest with the GP Connect team (see 'Onboarding' below).
+    
+    Become an API consumer
+    If you're planning on consuming data using GP Connect APIs then you're a consumer system.
+
+    Become an API provider
+    If you're planning on providing data using GP Connect APIs then you're a provider system.
     ## Related APIs
     The following APIs are also related to this API:
 
@@ -140,6 +146,23 @@ info:
     - details of the consumer system
     - details of the consumer's organisation, including ODS code
     The information in the JWT is retained for audit purposes.
+    
+    Provider systems:
+    - SHALL only accept connections from the [Spine Secure Proxy](https://developer.nhs.uk/apis/gpconnect-1-5-0/integration_spine_secure_proxy.html) (SSP)
+    - SHALL authenticate the SSP prior to responding to any requests using its [client certificate](https://developer.nhs.uk/apis/gpconnect-1-5-0/development_api_security_guidance.html#client-certificates-tlsma)
+    - SHALL only accept encrypted connections and drop connection attempts presented over insecure protocols
+    - SHALL only accept requests for its allocated address space identifier (ASID), as specified by the Ssp-To header on its matching endpoint URL
+    - SHALL check that the Ssp-InteractionID value is consistent with the endpoint being requested
+    - SHALL check for the presence of all [SSP headers](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#consumer)
+    - SHALL check that an [authorization bearer token](https://developer.nhs.uk/apis/gpconnect-1-5-0/integration_cross_organisation_audit_and_provenance.html#json-web-tokens-jwt) is present and correctly formed
+    - MAY authorise access to API endpoints through examining acceptable values in the JSON Web Tokens (JWT) requested_scope claim
+    - SHALL risk-manage the security of the endpoints of the Transport Layer Security (TLS) communications, so as to prevent inappropriate risks (for example, audit logging of the GET parameters into an unprotected audit log)
+
+    Provider systems should support only the following ciphers, ordered by preference (that is, the first item being the most preferred).
+    - AESGCM+EECDH
+    - AESGCM+EDH
+    - AES256+EECDH
+    - AES256+EDH
 
     The SSP checks data-sharing agreements to ensure that the consumer system is authorised to communicate with the provider system.
 
@@ -168,6 +191,10 @@ info:
 
     ### Technical testing
     The purpose of technical testing is to help you assure the messaging capability of your system via the Spine with GP Connect provider FHIR endpoints. It ensures the consumer requests conform to FHIR standards as per the specification. In addition, it maintains the integrity of the data displayed to the user and assures pertinent functional requirements. It does not assure the message payload, which is covered in clinical assurance.
+
+    An automated provider test harness has been made publicly available to allow standardised testing of the FHIR® APIs prior to any formal assurance activities being undertaken. This approach aims to streamline the end-to-end assurance process by ensuring that a common baseline level of technical conformance has been achieved and, thus, fewer issues are surfaced during formal assurance.
+
+    Download the [GP Connect automated test suite for API providers](https://github.com/nhsconnect/gpconnect-provider-testing) to help validate the technical conformance of your provider API implementation.
 
     See [Consumer Supplier Test Assurance for achieving Technical Conformance](https://github.com/nhsconnect/gpc-consumer-support/wiki/Document-library#consumer-supplier-test-assurance-for-achieving-technical-conformance) (PDF) for full details of the technical conformance process and relevant artefacts.
     ## Onboarding
@@ -231,8 +258,8 @@ info:
       
   contact:
     name: 'gp-connect-access-record-structured-fhir API Support'
-    url: 'https://digital.nhs.uk/developer/help-and-support'
-    email: api.management@nhs.net
+    url: 'https://simplifier.net/guide/gp-connect-access-record-structured/Home/Help-and-Support/Enquiries.page.md?version=current'
+    email: gpconnect@nhs.net
 paths: 
   /Patient/$gpc.getstructuredrecord:
     post:
