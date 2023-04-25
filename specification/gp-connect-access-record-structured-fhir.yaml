@@ -45,7 +45,7 @@ info:
     - community cardiac nurse accesses GP record before visiting a patient
     
     
-    For more details, see the [GP Connect Access Record: Structured specification](https://developer.nhs.uk/apis/gpconnect-1-5-1/accessrecord_structured.html), and for a description of terms and standards used in this guide, please see the [General API Guidance page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/general-api-guidance)
+    For more details, see the [GP Connect Access Record: Structured specification](https://developer.nhs.uk/apis/gpconnect-1-5-1/accessrecord_structured.html), and for a description of terms and standards used in this guide, please see the [General API Guidance page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/general-api-guidance).
 
     You cannot currently use this API to:
 
