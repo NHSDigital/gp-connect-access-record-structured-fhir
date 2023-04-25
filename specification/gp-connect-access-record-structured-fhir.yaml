@@ -64,6 +64,12 @@ info:
 
     Before you start development, read the [GP Connect API 1.5.1-beta](https://developer.nhs.uk/apis/gpconnect-1-5-1/) specification and the prerequisites listed below.  
 
+    Become an API consumer
+    If you're planning on consuming data using GP Connect APIs then you're a consumer system.
+
+    Become an API provider
+    If you're planning on providing data using GP Connect APIs then you're a provider system.
+
     ### Prerequisites
     #### Technical
     The technical prerequisites are as follows:
@@ -83,11 +89,6 @@ info:
     - you must have a clinical safety officer (CSO) who is responsible for [DCB0129](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) and, if necessary, [DCB0160](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems) (for more on clinical risk management, visit [Clinical risk management standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards))
     If you are confident that you can meet the prerequisites, please express an interest with the GP Connect team (see 'Onboarding' below).
     
-    Become an API consumer
-    If you're planning on consuming data using GP Connect APIs then you're a consumer system.
-
-    Become an API provider
-    If you're planning on providing data using GP Connect APIs then you're a provider system.
     ## Related APIs
     The following APIs are also related to this API:
 
@@ -99,7 +100,7 @@ info:
     ## Integration with Spine
     For guidance on how to integrate with the Spine systems required to use this API, please see the [integrate with spine](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-integration) page.
 
-    For guidance on querying and using the Spine Directory Service (SDS) [please see the Spine Directory Service page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-directory-service) 
+    For guidance on querying and using the Spine Directory Service (SDS) [please see the Spine Directory Service page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-directory-service).
     ## API status and roadmap
     The current working version is 1.5.1. The API status is:
 
@@ -134,9 +135,9 @@ info:
     ### Security
     Access to the GP Connect APIs is controlled and protected by the [Spine Secure Proxy (SSP)](https://digital.nhs.uk/developer/guides-and-documentation/api-technologies-at-nhs-digital#spine-security-proxy-ssp-), a forward HTTP proxy.
 
-    It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of requests, checking data sharing agreements and transaction logging, and its use and examples are described at the [Spine Secure Proxy page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-secure-proxy)
+    It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of requests, checking data sharing agreements and transaction logging, and its use and examples are described at the [Spine Secure Proxy page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-secure-proxy).
 
-    For a breakdown of cross-organisation audit and provenance, please see the related page [here](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/cross-organisation-audit-and-provenance)
+    For a breakdown of cross-organisation audit and provenance, please see the related page [here](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/cross-organisation-audit-and-provenance).
 
     All HTTP communications are secured using TLS MA. This includes both legs of the request, from consumer system to the proxy and then from the proxy to provider system.
 
