@@ -57,17 +57,18 @@ info:
 
     To retrieve documents from a patient's registered GP practice, use [GP Connect Access Document - FHIR API](https://digital.nhs.uk/developer/api-catalogue/gp-connect-access-document-fhir). After you've found the relevant document references within Access Record returns, use GP Connect Access Document to retrieve the documents. All documents can be requested separately.
 
-
     ## Who can use this API
 
     This API can be used by developers of clinical systems that support clinicians delivering direct care.
 
     Before you start development, read the [GP Connect API 1.5.1-beta](https://developer.nhs.uk/apis/gpconnect-1-5-1/) specification and the prerequisites listed below.
 
-    Become an API consumer
+    ### Become an API consumer
+
     If you're planning on consuming data using GP Connect APIs then you're a consumer system.
 
-    Become an API provider
+    ### Become an API provider
+
     If you're planning on providing data using GP Connect APIs then you're a provider system.
 
     ### Prerequisites
@@ -85,7 +86,6 @@ info:
 
     - your organisation must be compliant with the [GP Connect Direct Care API Information Governance Model](https://github.com/nhsconnect/gpc-consumer-support/wiki/Information-Governance-(IG))
     - you must manage access to your system locally using local role-based access control (RBAC) (this does not need to be compliant with the national RBAC model and GP Connect products do not require smartcards to control access, though they can be used if already implemented)
-
     - the GP Connect APIs are for direct care purposes for NHS patients in England
 
     ### Clinical safety
@@ -93,6 +93,7 @@ info:
     The clinical safety prerequisites are as follows:
 
     - you must have a clinical safety officer (CSO) who is responsible for [DCB0129](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) and, if necessary, [DCB0160](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems) (for more on clinical risk management, visit [Clinical risk management standards](https://digital.nhs.uk/services/clinical-safety/clinical-risk-management-standards))
+
     If you are confident that you can meet the prerequisites, please express an interest with the GP Connect team (see 'Onboarding' below).
 
     ## Related APIs
@@ -106,9 +107,9 @@ info:
 
     ## Integration with Spine
 
-    For guidance on how to integrate with the Spine systems required to use this API, please see the [integrate with spine](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-integration) page.
+    For guidance on how to integrate with the Spine systems required to use this API, please see the [integrate with spine page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-integration).
 
-    For guidance on querying and using the Spine Directory Service (SDS) [please see the Spine Directory Service page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-directory-service).
+    For guidance on querying and using the Spine Directory Service (SDS) please see the [Spine Directory Service page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-directory-service).
 
     ## API status and roadmap
 
@@ -116,11 +117,12 @@ info:
 
     - in production (out of beta) for medications and allergies - there will be no breaking changes
     - in production, beta for other aspects of the clinical record - there might be breaking changes, but we will let you know in advance
+
     It may not be fully supported by all providing systems. See [GP Connect supplier progress](https://digital.nhs.uk/services/gp-connect/supplier-progress) for details of provider rollout.
 
     The previous version ([1.5.0](https://developer.nhs.uk/apis/gpconnect-1-5-0/)) does not include the ability to access deceased patients' documents, but is available for system suppliers who have started to develop against it.
 
-    Roadmap
+    ### Roadmap
 
     The next planned version is [1.6.0](https://developer.nhs.uk/apis/gpconnect-1-6-0/), which is currently [in production, beta](http://digital.nhs.uk/developer/guides-and-documentation/reference-guide#statuses). The 1.6.0 specification contains the full scope of 1.5.1, but additionally it introduces a new message to support GP2GP transactions. It is important to understand that the GP2GP transactions do not affect the consumer build. 1.6.0 will be backward compatible with the 1.5.1 specification.
 
