@@ -157,7 +157,7 @@ info:
 
     It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of requests, checking data sharing agreements and transaction logging, and its use and examples are described at the [Spine Secure Proxy page](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/spine-secure-proxy).
 
-    For a breakdown of cross-organisation audit and provenance, please see the related page [here](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/cross-organisation-audit-and-provenance).
+    [Cross-organisation audit and provenance](https://digital.nhs.uk/developer/api-catalogue/gp-connect-general-pages/cross-organisation-audit-and-provenance) contains further details.
 
     All HTTP communications are secured using TLS MA. This includes both legs of the request, from consumer system to the proxy and then from the proxy to provider system.
 
