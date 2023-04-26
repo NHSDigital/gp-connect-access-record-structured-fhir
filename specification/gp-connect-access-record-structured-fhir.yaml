@@ -207,7 +207,7 @@ info:
     | -----------                  | ---                                                                                        |
     | Internet-facing demonstrator | [https://orange.testlab.nhs.uk/](https://orange.testlab.nhs.uk/)                           |
     | OpenTest environment         | [https://orange.testlab.nhs.uk/opentest.html](https://orange.testlab.nhs.uk/opentest.html) |
-    | Integration                  | (INT)	Provided during onboarding process                                                  |
+    | Integration                  | (INT) Provided during onboarding process                                                   |
 
     We have 2 testing streams:
 
@@ -401,7 +401,7 @@ components:
       in: header
       name: Ssp-TraceID
       description: |
-        	Consumer's Trace ID (a GUID or UUID), generated per request
+        Consumer's Trace ID (a GUID or UUID), generated per request
       required: true
       schema:
         type: string
@@ -410,7 +410,7 @@ components:
       in: header
       name: Ssp-From
       description: |
-        	Consumer's ASID - that of the requesting organisation
+        Consumer's ASID - that of the requesting organisation
       required: true
       schema:
         type: string
@@ -419,7 +419,7 @@ components:
       in: header
       name: Ssp-To
       description: |
-        	Provider's ASID - identified by use of SDS
+        Provider's ASID - identified by use of SDS
       required: true
       schema:
         type: string
@@ -428,7 +428,7 @@ components:
       in: header
       name: Ssp-InteractionID
       description: |
-        	Spine Interaction ID, likely to be 	urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+        Spine Interaction ID, likely to be urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
       required: true
       schema:
         type: string
