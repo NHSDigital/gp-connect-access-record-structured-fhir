@@ -256,14 +256,16 @@ info:
 
     Once we receive your use case, we'll respond within 14 days.
 
-    Consumer assurance process
+    ### Consumer assurance process
+
     On approval of a use case, we will support you through the assurance process through to go live. We will discuss the [assurance process](https://github.com/nhsconnect/gpc-consumer-support/wiki/Assurance-Process-Overview) and artefacts with you to help you understand the requirements.
 
     ![Access Record Structured Consumer Assurance Process](https://raw.githubusercontent.com/NHSDigital/gp-connect-access-record-structured-fhir/master/specification/images/access-record-structured-consumer-assurance-process.svg)
 
     Start your development work within 6 months of use case approval. If you miss this date, a review or new submission of the use case will be required. Changes or additional development will also require a review or new use case submission. For full details of the technical conformance process, see [GP Connect Consumer Supplier Test Assurance for achieving Technical Conformance](https://github.com/nhsconnect/gpc-consumer-support/wiki/Document-library#consumer-supplier-test-assurance-for-achieving-technical-conformance) (PDF).
 
-    Clinical assurance process
+    ### Clinical assurance process
+
     We are here to support you to develop clinically safe systems in line with your responsibility to achieve the relevant [DCB0129](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems) or [DCB0160](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems) clinical safety standards.
 
     ![Access Record Structured Clinicals Assurance Process](https://raw.githubusercontent.com/NHSDigital/gp-connect-access-record-structured-fhir/master/specification/images/gpc2-structured-consumer-clinical-assurance-process.svg)
