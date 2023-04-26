@@ -313,7 +313,7 @@ paths:
   /Patient/$gpc.getstructuredrecord:
     post:
       summary: Access a structured record relating to a patient.
-      description: >
+      description: |
         ## Overview
 
         This end point returns a patient's record in structured format using FHIR Operations. It returns a Bundle.
@@ -331,7 +331,7 @@ paths:
           application/fhir+json:
             schema:
               type: object
-              description: >
+              description: |
                  TODO: Add in description with link to Simplifier
             example:
               resourceType: Parameters
